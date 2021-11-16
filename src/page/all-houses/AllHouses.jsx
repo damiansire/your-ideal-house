@@ -4,7 +4,6 @@ import React, { useState, useEffect } from "react";
 async function getData() {
   let result;
   try {
-    debugger;
     const response = await fetch("http://localhost:3001/houses/today");
     result = await response.json();
   } catch (error) {
@@ -19,7 +18,6 @@ export default function AllHouses() {
 
   useEffect(() => {
     getData().then((data) => {
-      debugger;
       setData(data);
     });
   }, []);

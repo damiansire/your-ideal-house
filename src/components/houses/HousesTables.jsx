@@ -63,7 +63,7 @@ function GetRowHtml(houseData) {
               <Typography variant="h6" gutterBottom component="div">
                 Imagenes
               </Typography>
-              <CarouselDiv />
+              <CarouselDiv houseId={houseData.id} />
             </Box>
           </Collapse>
         </TableCell>
@@ -102,7 +102,6 @@ const tableColumns = [
 ];
 
 export default function HousesTables({ housesData }) {
-  debugger;
   return (
     <TableContainer component={Paper}>
       <Table aria-label="collapsible table">

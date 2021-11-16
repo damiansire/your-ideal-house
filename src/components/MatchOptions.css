@@ -1,0 +1,197 @@
+.buttons-matchOptions-container {
+  display: flex;
+  justify-content: space-around;
+}
+
+.btn {
+  width: 68px;
+  height: 68px;
+  position: absolute;
+  top: 50%;
+  margin-top: -34px;
+  padding-top: 10px;
+  outline: none;
+  border: none;
+  border-radius: 50%;
+  box-shadow: 0 5px 10px rgba(0, 0, 0, 0.1);
+  background: #fefefe;
+  z-index: 5;
+}
+.btn:hover {
+  transform: scale(1.05);
+}
+.btn-like {
+  right: 10%;
+}
+@media (min-width: 768px) {
+  .btn-like {
+    left: calc(50% + 225px);
+    right: initial;
+  }
+}
+.btn-dislike {
+  left: 10%;
+}
+@media (min-width: 768px) {
+  .btn-dislike {
+    left: calc(50% - 293px);
+  }
+}
+.btn-dislike::after {
+  content: "";
+  position: absolute;
+  transform: translate(-50%, -50%) rotate(-45deg);
+  top: 50%;
+  left: 50%;
+  width: 6px;
+  height: 38px;
+  background: #b5b5b5;
+  border: 2px solid #fefefe;
+}
+.btn-dislike .heart::before,
+.btn-dislike .heart::after {
+  background-color: #b5b5b5;
+}
+
+.heart {
+  position: relative;
+  display: inline-block;
+  width: 36px;
+  height: 30px;
+}
+.heart::before,
+.heart::after {
+  content: "";
+  position: absolute;
+  top: 0;
+  left: 0;
+  border-radius: 20px 20px 0 0;
+  width: 18px;
+  height: 28px;
+  background-color: #f5534f;
+  transform: rotate(45deg);
+  transform-origin: 100% 100%;
+}
+.heart::after {
+  left: 18px;
+  transform: rotate(-45deg);
+  transform-origin: 0 100%;
+}
+
+.btn-like:hover ~ .wrapper,
+.btn-like:active ~ .wrapper {
+  background: #f0754a;
+}
+.btn-like:hover ~ .wrapper .face::before,
+.btn-like:active ~ .wrapper .face::before {
+  margin-top: 10px;
+}
+.btn-like:hover ~ .wrapper .face::after,
+.btn-like:active ~ .wrapper .face::after {
+  height: 85px;
+}
+.btn-like:hover ~ .wrapper .eyes,
+.btn-like:active ~ .wrapper .eyes {
+  top: 13%;
+}
+.btn-like:hover ~ .wrapper .eyes::before,
+.btn-like:hover ~ .wrapper .eyes::after,
+.btn-like:active ~ .wrapper .eyes::before,
+.btn-like:active ~ .wrapper .eyes::after {
+  width: 18px;
+  height: 5px;
+  margin: 0px 12.5%;
+  transform: rotate(-37.5deg);
+  border-radius: 20px;
+}
+.btn-like:hover ~ .wrapper .eyes::after,
+.btn-like:active ~ .wrapper .eyes::after {
+  transform: rotate(37.5deg);
+}
+.btn-like:hover ~ .wrapper .nose,
+.btn-like:active ~ .wrapper .nose {
+  top: 18%;
+}
+.btn-like:hover ~ .wrapper .mouth,
+.btn-like:active ~ .wrapper .mouth {
+  top: 16.5%;
+}
+.btn-like:hover ~ .wrapper .tongue::before,
+.btn-like:active ~ .wrapper .tongue::before {
+  height: 12px;
+}
+.btn-like:hover ~ .wrapper .tongue::after,
+.btn-like:active ~ .wrapper .tongue::after {
+  height: 24px;
+  -webkit-animation: movetongue 0.1s linear 0.35s infinite alternate forwards;
+  animation: movetongue 0.1s linear 0.35s infinite alternate forwards;
+}
+.btn-like:hover ~ .wrapper .chin,
+.btn-like:active ~ .wrapper .chin {
+  top: 34%;
+}
+.btn-like:hover ~ .wrapper .tail,
+.btn-like:active ~ .wrapper .tail {
+  -webkit-animation: movetail 0.1s linear infinite alternate forwards;
+  animation: movetail 0.1s linear infinite alternate forwards;
+}
+
+.btn-dislike:hover ~ .wrapper,
+.btn-dislike:active ~ .wrapper {
+  background: #747499;
+}
+.btn-dislike:hover ~ .wrapper .ears::before,
+.btn-dislike:active ~ .wrapper .ears::before {
+  transform: rotate(-50deg) translate(-7px, 2px);
+}
+.btn-dislike:hover ~ .wrapper .ears::after,
+.btn-dislike:active ~ .wrapper .ears::after {
+  transform: rotate(50deg) translate(7px, 2px);
+}
+.btn-dislike:hover ~ .wrapper .face::before,
+.btn-dislike:active ~ .wrapper .face::before {
+  margin-top: 28px;
+}
+.btn-dislike:hover ~ .wrapper .face::after,
+.btn-dislike:active ~ .wrapper .face::after {
+  height: 55px;
+}
+.btn-dislike:hover ~ .wrapper .eyes,
+.btn-dislike:active ~ .wrapper .eyes {
+  top: 38%;
+}
+.btn-dislike:hover ~ .wrapper .eyes::before,
+.btn-dislike:hover ~ .wrapper .eyes::after,
+.btn-dislike:active ~ .wrapper .eyes::before,
+.btn-dislike:active ~ .wrapper .eyes::after {
+  width: 18px;
+  height: 5px;
+  margin: 0px 14.5%;
+  transform: rotate(-37.5deg);
+  border-radius: 20px;
+}
+.btn-dislike:hover ~ .wrapper .eyes::after,
+.btn-dislike:active ~ .wrapper .eyes::after {
+  transform: rotate(37.5deg);
+}
+.btn-dislike:hover ~ .wrapper .teardrop,
+.btn-dislike:active ~ .wrapper .teardrop {
+  -webkit-animation: cry 0.1s ease-in 0.25s forwards;
+  animation: cry 0.1s ease-in 0.25s forwards;
+}
+.btn-dislike:hover ~ .wrapper .nose,
+.btn-dislike:active ~ .wrapper .nose {
+  top: 44%;
+}
+.btn-dislike:hover ~ .wrapper .mouth,
+.btn-dislike:active ~ .wrapper .mouth {
+  top: 42%;
+}
+.btn-dislike:hover ~ .wrapper .chin,
+.btn-dislike:active ~ .wrapper .chin {
+  top: 52%;
+}
+.btn-dislike:hover ~ .wrapper .tail,
+.btn-dislike:active ~ .wrapper .tail {
+  transform: rotate(0);
+}
