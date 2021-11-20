@@ -1,11 +1,18 @@
 import React, { useEffect, useState } from "react";
-import { getPendingMatchHouseData } from "../../adapters/housesData";
-import CarouselDiv from "../../components/CarouselDiv";
-import MatchOptions from "../../components/MatchOptions";
-//Es mejor meterle un padre
+import {
+  getPendingMatchHouseData,
+  getHouseImages,
+} from "../../adapters/housesData";
+import TinderCardContainer from "../../components/TinderCardContainer/TinderCardContainer";
+import HouseData from "./HouseData";
+import ImagesList from "./ImagesList";
+import { isEmpty } from "../../lib/isEmpty";
+
 const MathHouse = () => {
   const [pendingHouse, setPendingHouse] = useState({});
+  // QUESTION: Es mejor unir estos dos estados en uno? selectedHouse = {data : {}, images : []}
   const [selectedHouse, setSelectedHouse] = useState({});
+  const [selectedHouseImage, setSelectedHouseImage] = useState({});
 
   useEffect(() => {
     getPendingMatchHouseData().then((data) => {
@@ -17,18 +24,30 @@ const MathHouse = () => {
     setSelectedHouse(pendingHouse[0]);
   }, [pendingHouse]);
 
+  useEffect(() => {
+    if (selectedHouse) {
+      getHouseImages(selectedHouse.id).then((houseImages) => {
+        setSelectedHouseImage(houseImages);
+      });
+    }
+  }, [selectedHouse]);
+
   return (
     <>
+      {/*<div>{selectedHouse && <TinderCardContainer />}</div> */}
       <div>
-        {selectedHouse && (
-          <CarouselDiv width="30%" houseId={selectedHouse.id} />
+        {selectedHouseImage.length > 0 && (
+          <ImagesList images={selectedHouseImage} />
         )}
-      </div>
-      <div>
-        <MatchOptions />
+        {!isEmpty(selectedHouse) && <HouseData house={selectedHouse} />}
       </div>
     </>
   );
 };
 
 export default MathHouse;
+
+/*
+
+  //ttp://localhost:3001/houses/img/MLU604128144
+  */
