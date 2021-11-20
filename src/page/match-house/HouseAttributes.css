@@ -1,0 +1,18 @@
+.attributeNameCell {
+  text-align: center;
+  background-color: #ebebeb;
+}
+
+.attributeValueCell {
+  text-align: center;
+  background-color: #f5f5f5;
+}
+
+.attributeTable th,
+.attributeTable td {
+  padding: 1em;
+}
+
+.attributeTable th {
+  font-weight: bold;
+}

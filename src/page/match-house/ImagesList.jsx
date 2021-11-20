@@ -1,7 +1,7 @@
 import React from "react";
 import "./ImagesList.css";
 
-const ImagesList = ({ images }) => {
+const ImagesList = ({ images, setSelectedImage }) => {
   return (
     <div className="ImagesListContainer">
       {images &&
@@ -9,7 +9,13 @@ const ImagesList = ({ images }) => {
           return (
             <div key={image.imageurl}>
               {/* QUESTION: Tiene sentido poner una key inutil como el caso de la url? */}
-              <img src={image.imageurl} alt={image.id} />
+              <img
+                onClick={() => {
+                  setSelectedImage(image.imageurl);
+                }}
+                src={image.imageurl}
+                alt={image.id}
+              />
             </div>
           );
         })}
