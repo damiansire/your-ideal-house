@@ -4,7 +4,7 @@ import "./HousePrice.css";
 const HousePrice = ({ priceObj }) => {
   console.log(priceObj);
   return (
-    <table>
+    <table className="housePriceTable">
       <thead>
         <th>Alquiler</th>
         <th>Gastos Comunes</th>

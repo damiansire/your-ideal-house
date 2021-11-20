@@ -9,6 +9,7 @@ import ImagesList from "./ImagesList";
 import { isEmpty } from "../../lib/isEmpty";
 import "./MatchHouse.css";
 import HousePrice from "./HousePrice";
+import HouseLocation from "./HouseLocation";
 
 const MathHouse = () => {
   const [pendingHouse, setPendingHouse] = useState({});
@@ -55,10 +56,17 @@ const MathHouse = () => {
             <div className="attributeContainer">
               <HouseAttributes house={selectedHouse} />
             </div>
-            <div className="priceContainer">
-              {!isEmpty(selectedHouse.price) != undefined && (
-                <HousePrice priceObj={selectedHouse.price} />
-              )}
+            <div className="principalDataContainer">
+              <div className="priceContainer">
+                {!isEmpty(selectedHouse.price) && (
+                  <HousePrice priceObj={selectedHouse.price} />
+                )}
+              </div>
+              <div className="locationContainer">
+                {!isEmpty(selectedHouse.location) && (
+                  <HouseLocation location={selectedHouse.location} />
+                )}
+              </div>
             </div>
           </>
         )}
