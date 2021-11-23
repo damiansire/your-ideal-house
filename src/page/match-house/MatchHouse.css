@@ -7,3 +7,7 @@
 .principalDataContainer > * {
   margin-top: 1rem;
 }
+
+.principalDataContainer {
+  width: 40%;
+}

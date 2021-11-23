@@ -1,0 +1,41 @@
+.tinder--buttons {
+  flex: 0 0 100px;
+  text-align: center;
+  padding-top: 20px;
+  display: flex;
+  justify-content: space-evenly;
+}
+
+.tinder--buttons button {
+  border-radius: 50%;
+  line-height: 120px;
+  width: 120px;
+  border: 0;
+  display: inline-block;
+  margin: 0 8px;
+}
+
+.tinder--buttons button:focus {
+  outline: 0;
+}
+
+.tinder--buttons i {
+  font-size: 64px;
+  vertical-align: middle;
+}
+
+.fa-heart {
+  color: #fface4;
+}
+
+.fa-remove {
+  color: #cdd6dd;
+}
+
+#nope {
+  background: indianred;
+}
+
+#love {
+  background: green;
+}

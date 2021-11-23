@@ -10,6 +10,7 @@ import { isEmpty } from "../../lib/isEmpty";
 import "./MatchHouse.css";
 import HousePrice from "./HousePrice";
 import HouseLocation from "./HouseLocation";
+import TinderMatchOptions from "./TinderMatchOptions";
 
 const MathHouse = () => {
   const [pendingHouse, setPendingHouse] = useState({});
@@ -20,20 +21,16 @@ const MathHouse = () => {
 
   useEffect(() => {
     getPendingMatchHouseData().then((data) => {
-      debugger;
       setPendingHouse(data);
     });
   }, []);
 
   useEffect(() => {
-    debugger;
-
     setSelectedHouse(pendingHouse[0]);
   }, [pendingHouse]);
 
   useEffect(() => {
     if (selectedHouse) {
-      debugger;
       getHouseImages(selectedHouse.id).then((houseImages) => {
         setSelectedHouseImage(houseImages);
         if (houseImages.length > 0) {
@@ -70,6 +67,9 @@ const MathHouse = () => {
                 {!isEmpty(selectedHouse.location) && (
                   <HouseLocation location={selectedHouse.location} />
                 )}
+              </div>
+              <div className="matchOptions">
+                <TinderMatchOptions />
               </div>
             </div>
           </>
