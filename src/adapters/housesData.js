@@ -14,11 +14,13 @@ export async function getPendingMatchHouseData() {
   let result;
   try {
     const response = await fetch("http://localhost:3001/news");
+    debugger;
     result = await response.json();
   } catch (error) {
     console.log(error);
   }
-  return result.viviendas || [];
+  debugger;
+  return result || [];
 }
 
 export async function getHouseImages(viviendaId) {

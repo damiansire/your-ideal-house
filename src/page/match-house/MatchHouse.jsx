@@ -20,16 +20,20 @@ const MathHouse = () => {
 
   useEffect(() => {
     getPendingMatchHouseData().then((data) => {
+      debugger;
       setPendingHouse(data);
     });
   }, []);
 
   useEffect(() => {
+    debugger;
+
     setSelectedHouse(pendingHouse[0]);
   }, [pendingHouse]);
 
   useEffect(() => {
     if (selectedHouse) {
+      debugger;
       getHouseImages(selectedHouse.id).then((houseImages) => {
         setSelectedHouseImage(houseImages);
         if (houseImages.length > 0) {
