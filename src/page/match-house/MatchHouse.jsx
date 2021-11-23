@@ -69,7 +69,7 @@ const MathHouse = () => {
                 )}
               </div>
               <div className="matchOptions">
-                <TinderMatchOptions />
+                <TinderMatchOptions houseId={selectedHouse.id} />
               </div>
             </div>
           </>
