@@ -1,6 +1,6 @@
 import React from "react";
-import "./TinderMatchOptions.css";
-import { sendLike, sendDislike } from "../../adapters/housesData";
+import "./MatchOptions.css";
+import { sendLike, sendDislike } from "../../../adapters/housesData";
 
 const likeButtonHandler = (houseId) => {
   sendLike(houseId).then((response) => {
@@ -14,7 +14,7 @@ const dislikeButtonHandler = (houseId) => {
   });
 };
 
-const TinderMatchOptions = ({ houseId }) => {
+const MatchOptions = ({ houseId }) => {
   return (
     <div class="tinder--buttons">
       <button
@@ -38,4 +38,4 @@ const TinderMatchOptions = ({ houseId }) => {
   );
 };
 
-export default TinderMatchOptions;
+export default MatchOptions;

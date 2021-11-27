@@ -1,0 +1,51 @@
+ul {
+  list-style-type: none;
+  margin: 0;
+  padding: 0;
+}
+
+.navbarTitle {
+  font-family: Saira;
+  font-style: normal;
+  font-weight: 600;
+  font-size: 24px;
+  line-height: 38px;
+  text-align: center;
+  letter-spacing: -0.01em;
+}
+
+.optionIcon-Navbar {
+  width: 50px;
+}
+
+.option-Navbar {
+  display: flex;
+  align-items: center;
+  padding: 10px;
+}
+
+.optionLink-Navbar {
+  cursor: pointer;
+  text-decoration: none;
+}
+
+.optionText-Navbar {
+  text-align: right;
+  font-family: Saira;
+  font-style: normal;
+  font-weight: 500;
+  font-size: 18px;
+  line-height: 28px;
+  margin-left: 10px;
+
+  color: #6b6b6b;
+}
+
+.title-container-Navbar {
+  text-align: center;
+  margin-top: 16px;
+}
+
+.navbar {
+  margin-top: 40px;
+}

@@ -1,20 +1,20 @@
 import logo from "./logo.svg";
 import "./App.css";
 import AllHouses from "./page/all-houses/AllHouses";
-import MathHouse from "./page/match-house/MatchHouse";
+import HouseDataContainer from "./page/match-house/HouseDataContainer";
 import { Routes, Route, Link } from "react-router-dom";
 import Navbar from "./components/Navbar";
 
 function App() {
   return (
     <div className="App">
-      <header className="App-header">
+      <div className="navbar-container">
         <Navbar />
-      </header>
-      <div>
+      </div>
+      <div className="main-app-container">
         <Routes>
           <Route exact path="/all-houses" element={<AllHouses />} />
-          <Route exact path="/" element={<MathHouse />} />
+          <Route exact path="/" element={<HouseDataContainer />} />
         </Routes>
       </div>
     </div>

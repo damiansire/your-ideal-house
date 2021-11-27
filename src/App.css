@@ -1,0 +1,15 @@
+.App {
+  display: flex;
+}
+
+.main-app-container {
+  width: 100%;
+  padding: 10px 45px;
+}
+
+.navbar-container {
+  width: 10%;
+  height: 100vh;
+  border: 1px solid #aeaeae;
+  box-sizing: border-box;
+}

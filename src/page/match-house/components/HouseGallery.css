@@ -1,0 +1,39 @@
+.imagesContainer {
+  display: grid;
+  grid-template-columns: repeat(3, 1fr);
+  column-gap: 10px;
+  row-gap: 12px;
+}
+.houseImage {
+  width: 100%;
+  height: auto;
+}
+.top-HouseGallery {
+  display: flex;
+  justify-content: space-between;
+}
+.title-HouseGallery {
+  font-family: Saira;
+  font-style: normal;
+  font-weight: 600;
+  font-size: 24px;
+  line-height: 38px;
+  color: #484848;
+}
+
+.currencySymbol {
+  color: #00c92c;
+}
+.priceContainer-HouseGalley {
+  font-family: Saira;
+  font-style: normal;
+  font-weight: 500;
+  font-size: 27px;
+}
+.HouseGallery {
+  background: #ffffff;
+  border: 1px solid #aeaeae;
+  box-sizing: border-box;
+  border-radius: 37px;
+  padding: 34px;
+}

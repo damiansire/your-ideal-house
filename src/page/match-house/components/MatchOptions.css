@@ -1,7 +1,6 @@
 .tinder--buttons {
   flex: 0 0 100px;
   text-align: center;
-  padding-top: 20px;
   display: flex;
   justify-content: space-evenly;
 }
@@ -38,4 +37,8 @@
 
 #love {
   background: green;
+}
+
+.tinder--buttons {
+  border: solid;
 }
