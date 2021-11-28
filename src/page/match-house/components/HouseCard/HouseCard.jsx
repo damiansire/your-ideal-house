@@ -23,13 +23,22 @@ const HouseCard = ({ selectedHouse, image }) => {
                 {selectedHouse.expenses?.price +
                   selectedHouse.expenses?.gastoscomunes}
               </p>
-              <p className="details-card__location-header">
-                {selectedHouse.location?.calle},{" "}
-                <span>
-                  {selectedHouse.location?.barrio},{" "}
-                  {selectedHouse.location?.ciudad}
-                </span>
-              </p>
+              <a
+                className="houseDirectionLink"
+                href={selectedHouse.principal.link}
+                target="_blank"
+                rel="noreferrer"
+              >
+                <p className="details-card__location-header">
+                  <span className="streetLinkText">
+                    {selectedHouse.location?.calle},
+                  </span>
+                  <span className="barrioLink">
+                    {selectedHouse.location?.barrio},{" "}
+                    {selectedHouse.location?.ciudad}
+                  </span>
+                </p>
+              </a>
             </div>
 
             <div className="details-card__body">

@@ -40,7 +40,6 @@ export async function sendLike(viviendaId) {
   try {
     const response = await fetch(`http://localhost:3001/like/${viviendaId}`);
     result = await response.json();
-    debugger;
     console.log(result);
   } catch (error) {
     console.log(error);
@@ -53,7 +52,6 @@ export async function sendDislike(viviendaId) {
   try {
     const response = await fetch(`http://localhost:3001/dislike/${viviendaId}`);
     result = await response.json();
-    debugger;
     console.log(result);
   } catch (error) {
     console.log(error);

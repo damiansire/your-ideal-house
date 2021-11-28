@@ -2,26 +2,33 @@ import React from "react";
 import "./MatchOptions.css";
 import { sendLike, sendDislike } from "../../../adapters/housesData";
 
-const likeButtonHandler = (houseId) => {
-  sendLike(houseId).then((response) => {
-    console.log(response);
-  });
-};
+const MatchOptions = ({
+  houseId,
+  setSelectedHouse,
+  removedPendingHouseById,
+}) => {
+  const optionHandler = async (houseId, option) => {
+    let response;
 
-const dislikeButtonHandler = (houseId) => {
-  sendDislike(houseId).then((response) => {
-    console.log(response);
-  });
-};
+    if (option === "like") {
+      response = await sendLike(houseId);
+    } else if (option === "dislike") {
+      response = await sendDislike(houseId);
+    }
 
-const MatchOptions = ({ houseId }) => {
+    if (response === true) {
+      debugger;
+      removedPendingHouseById(houseId);
+    }
+  };
+
   return (
     <div className="tinder--buttons">
       <button
         id="love"
         data-id={houseId}
         onClick={() => {
-          likeButtonHandler(houseId);
+          optionHandler(houseId, "like");
         }}
       >
         <i className="fa fa-heart"></i>
@@ -29,7 +36,7 @@ const MatchOptions = ({ houseId }) => {
       <button
         id="nope"
         onClick={() => {
-          dislikeButtonHandler(houseId);
+          optionHandler(houseId, "dislike");
         }}
       >
         <i className="fa fa-remove"></i>

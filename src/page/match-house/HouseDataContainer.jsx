@@ -8,13 +8,20 @@ import "./HouseDataContainer.css";
 import HouseCard from "./components/HouseCard/HouseCard";
 import MatchOptions from "./components/MatchOptions";
 import HouseFilter from "./components/HouseFilter";
+import TinderCard from "react-tinder-card";
 
 const HouseDataContainer = () => {
-  const [pendingHouse, setPendingHouse] = useState({});
+  const [pendingHouse, setPendingHouse] = useState([]);
   // QUESTION: Es mejor unir estos dos estados en uno? selectedHouse = {data : {}, images : []}
   const [selectedHouse, setSelectedHouse] = useState({});
   const [selectedHouseImage, setSelectedHouseImage] = useState({});
   const [selectedImage, setSelectedImage] = useState("");
+
+  const removedPendingHouseById = (houseId) => {
+    setPendingHouse((lastState) => {
+      return lastState.filter((house) => house.id !== houseId);
+    });
+  };
 
   useEffect(() => {
     getPendingMatchHouseData().then((data) => {
@@ -46,7 +53,11 @@ const HouseDataContainer = () => {
         <HouseCard selectedHouse={selectedHouse} image={selectedImage} />
       </div>
       <div className="matchOption">
-        <MatchOptions houseId={selectedHouse?.id} />
+        <MatchOptions
+          houseId={selectedHouse?.id}
+          setSelectedHouse={setSelectedHouse}
+          removedPendingHouseById={removedPendingHouseById}
+        />
       </div>
       <div className="imageGalery">
         {selectedHouseImage.length > 0 && (

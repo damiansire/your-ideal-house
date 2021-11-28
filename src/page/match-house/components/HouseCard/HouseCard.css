@@ -69,10 +69,17 @@
 }
 
 .details-card__location-header span {
-  /*El span tiene display block para que ocupe "toda una fila"*/
+  font-family: "Saira";
   display: block;
+}
+
+.details-card__location-header span.barrioLink {
   color: var(--blue);
-  font-weight: bolder;
+  font-weight: normal;
+}
+
+.streetLinkText {
+  color: white;
 }
 
 /*##################*/
@@ -141,4 +148,8 @@ table tbody tr th:nth-child(even) {
 
 .fourDigitExpense {
   padding: 0 9px;
+}
+
+.houseDirectionLink {
+  text-decoration: none;
 }
