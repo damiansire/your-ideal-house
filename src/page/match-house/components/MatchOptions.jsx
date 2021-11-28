@@ -16,7 +16,7 @@ const dislikeButtonHandler = (houseId) => {
 
 const MatchOptions = ({ houseId }) => {
   return (
-    <div class="tinder--buttons">
+    <div className="tinder--buttons">
       <button
         id="love"
         data-id={houseId}
@@ -24,7 +24,7 @@ const MatchOptions = ({ houseId }) => {
           likeButtonHandler(houseId);
         }}
       >
-        <i class="fa fa-heart"></i>
+        <i className="fa fa-heart"></i>
       </button>
       <button
         id="nope"
@@ -32,7 +32,7 @@ const MatchOptions = ({ houseId }) => {
           dislikeButtonHandler(houseId);
         }}
       >
-        <i class="fa fa-remove"></i>
+        <i className="fa fa-remove"></i>
       </button>
     </div>
   );

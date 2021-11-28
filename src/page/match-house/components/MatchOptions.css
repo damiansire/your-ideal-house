@@ -32,10 +32,12 @@
 }
 
 #nope {
+  cursor: pointer;
   background: indianred;
 }
 
 #love {
+  cursor: pointer;
   background: green;
 }
 

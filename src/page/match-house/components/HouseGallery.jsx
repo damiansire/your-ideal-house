@@ -1,17 +1,18 @@
 import React from "react";
 import "./HouseGallery.css";
 
-const HouseGallery = ({ images, setSelectedImage }) => {
-  images = images.slice(0, 6);
+const HouseGallery = ({ images, setSelectedImage, expenses }) => {
   return (
-    <div class="HouseGallery">
-      <div class="top-HouseGallery">
+    <div className="HouseGallery">
+      <div className="top-HouseGallery">
         <div>
-          <span class="title-HouseGallery"> Fotos </span>
+          <span className="title-HouseGallery"> Fotos </span>
         </div>
-        <div class="priceContainer-HouseGalley">
-          <span class="price"> 2.547 </span>
-          <span class="currencySymbol">USD</span>
+        <div className="priceContainer-HouseGalley">
+          <span className="currencySymbol">{expenses?.currency}</span>
+          <span className="price">
+            {expenses?.price + expenses?.gastoscomunes}
+          </span>
         </div>
       </div>
       <div className="imagesContainer">

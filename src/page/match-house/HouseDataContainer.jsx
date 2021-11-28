@@ -43,15 +43,16 @@ const HouseDataContainer = () => {
         <HouseFilter />
       </div>
       <div className="descriptionCard">
-        <HouseCard />
+        <HouseCard selectedHouse={selectedHouse} image={selectedImage} />
       </div>
       <div className="matchOption">
-        <MatchOptions />
+        <MatchOptions houseId={selectedHouse?.id} />
       </div>
       <div className="imageGalery">
         {selectedHouseImage.length > 0 && (
           <HouseGallery
             images={selectedHouseImage}
+            expenses={selectedHouse?.expenses}
             setSelectedImage={setSelectedImage}
           />
         )}

@@ -1,3 +1,144 @@
+:root {
+  --green: #01c930;
+  --blue: #1283db;
+}
+
+* {
+  margin: 0;
+  box-sizing: border-box;
+}
+
+/*##################*/
+/*Estilos generales */
+/*##################*/
+
 .houseCard {
-  border: solid;
+  /*Centrar la card en el body*/
+  display: flex;
+  align-items: center;
+  justify-content: center;
+
+  font-family: Arial, Helvetica, sans-serif;
+}
+
+.details-card {
+  width: 100%;
+  background-color: white;
+
+  border-radius: 32px;
+  overflow: hidden; /*Para ocultar los bordes que sobresalen de la imágen al redondear los bordes*/
+  box-shadow: 4px 5px 20px rgb(211 211 211);
+  border: 1px solid #aeaeae;
+}
+
+.subtitle {
+  text-align: center;
+  margin: 12px 0px;
+}
+
+/*##################*/
+/*Estilos del header*/
+/*##################*/
+
+.details-card__header {
+  height: 220px;
+  color: white;
+  font-size: 18px;
+  font-weight: bold;
+
+  /*Imágen de fondo*/
+  background-position: center;
+  background-repeat: no-repeat;
+  background-size: cover;
+
+  /*Flex para posicionar el precio y la ubicación*/
+  display: flex;
+  flex-direction: column;
+  justify-content: space-between;
+
+  padding: 16px;
+}
+
+.details-card__price {
+  /*El precio se alinea a las derecha*/
+  text-align: right;
+}
+
+.details-card__currency {
+  color: var(--green);
+}
+
+.details-card__location-header span {
+  /*El span tiene display block para que ocupe "toda una fila"*/
+  display: block;
+  color: var(--blue);
+  font-weight: bolder;
+}
+
+/*##################*/
+/*Estilos del cuerpo*/
+/*##################*/
+.details-card__body {
+  /*Contenedor general*/
+  padding: 0 32px 16px 32px; /*Arriba: 0, lados: 32 y abajo 16*/
+}
+
+.details-card__location-costs {
+  /*Contenedor que contiene la sección de ubicación y la sección de gastos*/
+  display: flex;
+  justify-content: space-between;
+}
+
+.details-card__location span {
+  color: var(--blue);
+}
+
+.details-card__costs span.data {
+  color: var(--blue);
+}
+
+#total {
+  color: var(--green);
+}
+
+/*##################*/
+/*Estilos de la tabla*/
+/*##################*/
+table {
+  width: 100%; /*Ocupa el 100% del ancho de la card*/
+  border-collapse: collapse; /*Para que los bordes de la tabla se unan*/
+  box-shadow: 1px 1px 16px rgb(211, 211, 211);
+  margin-bottom: 12px;
+}
+
+table tbody tr {
+  /*Filas*/
+  font-size: 14px;
+}
+
+table tbody tr th {
+  /*Columnas de cada fila*/
+  padding: 6px;
+}
+
+table tbody tr:nth-child(odd) {
+  /*Las filas impares tienen fondo gris*/
+  background-color: rgb(243, 243, 243);
+}
+
+table tbody tr th:nth-child(odd) {
+  text-align: left; /*Las columas impares (izquierda) alinean el texto a la izquierda*/
+}
+
+table tbody tr th:nth-child(even) {
+  text-align: right; /*Las columnas pares (derecha) alinean el texto a la derecha*/
+}
+
+.expenseAttribute {
+  display: flex;
+  justify-content: space-between;
+}
+
+.fourDigitExpense {
+  padding: 0 9px;
 }

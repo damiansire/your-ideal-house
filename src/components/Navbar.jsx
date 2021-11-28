@@ -34,7 +34,7 @@ const Navbar = () => {
               <ul>
                 {menuOptions.map((option) => {
                   return (
-                    <li>
+                    <li key={option.text} className="option-container-Navbar">
                       <a href={option.link} className="optionLink-Navbar">
                         <div className="option-Navbar">
                           <div>

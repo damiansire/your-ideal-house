@@ -3,6 +3,8 @@
   grid-template-columns: repeat(3, 1fr);
   column-gap: 10px;
   row-gap: 12px;
+  max-height: 76vh;
+  overflow-y: auto;
 }
 .houseImage {
   width: 100%;
