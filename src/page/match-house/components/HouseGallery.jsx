@@ -1,7 +1,7 @@
 import React from "react";
 import "./HouseGallery.css";
 
-const HouseGallery = ({ images, setSelectedImage, expenses }) => {
+const HouseGallery = ({ images, setSelectedImage, expenses, openModal }) => {
   return (
     <div className="HouseGallery">
       <div className="top-HouseGallery">
@@ -24,6 +24,7 @@ const HouseGallery = ({ images, setSelectedImage, expenses }) => {
                 <img
                   className="houseImage"
                   onClick={() => {
+                    openModal();
                     setSelectedImage(image.imageurl);
                   }}
                   src={image.imageurl}

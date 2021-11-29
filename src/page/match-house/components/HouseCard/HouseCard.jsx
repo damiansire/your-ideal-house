@@ -23,6 +23,14 @@ const HouseCard = ({ selectedHouse, image }) => {
                 {selectedHouse.expenses?.price +
                   selectedHouse.expenses?.gastoscomunes}
               </p>
+              <p className="details-card__price">
+                <span className="details-card__currency">U$S</span>
+                {Math.floor(
+                  (selectedHouse.expenses?.price +
+                    selectedHouse.expenses?.gastoscomunes) /
+                    44
+                )}
+              </p>
               <a
                 className="houseDirectionLink"
                 href={selectedHouse.principal.link}
