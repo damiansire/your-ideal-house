@@ -8,11 +8,8 @@ import "./HouseDataContainer.css";
 import HouseCard from "./components/HouseCard/HouseCard";
 import MatchOptions from "./components/MatchOptions";
 import HouseFilter from "./components/HouseFilter";
-import TinderCard from "react-tinder-card";
 
 import Box from "@mui/material/Box";
-import Button from "@mui/material/Button";
-import Typography from "@mui/material/Typography";
 import Modal from "@mui/material/Modal";
 
 const style = {
