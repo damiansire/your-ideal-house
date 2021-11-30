@@ -58,3 +58,15 @@ export async function sendDislike(viviendaId) {
   }
   return result || [];
 }
+
+export async function getFilters() {
+  let result;
+  try {
+    const response = await fetch(`http://localhost:3001/houses/filters`);
+    result = await response.json();
+    console.log(result);
+  } catch (error) {
+    console.log(error);
+  }
+  return result || [];
+}
